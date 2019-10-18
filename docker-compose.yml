@@ -24,15 +24,15 @@ services:
     restart: always
     labels:
       # - traefik.enable=false
-      - traefik.http.frontend.rule=Host:juliyaz-m232.local,www.juliyaz-m232.local
+      - traefik.http.frontend.rule=Host:juliyaz-m232.local,www.juliyaz-m232.local,test-website.local,www.test-website.local
       - traefik.http.frontend.entryPoints=http
-      - traefik.https.frontend.rule=Host:juliyaz-m232.local,www.juliyaz-m232.local
+      - traefik.https.frontend.rule=Host:juliyaz-m232.local,www.juliyaz-m232.local,test-website.local,www.test-website.local
       - traefik.https.frontend.entryPoints=https
       - traefik.https.protocol=https
       - traefik.https.port=443
     # Must add extra_hosts to be written to /etc/hosts - otherwise containerized application can not curl itself
     extra_hosts:
-      - "juliyaz-m232.local www.juliyaz-m232.local:127.0.0.1"
+      - "juliyaz-m232.local www.juliyaz-m232.local test-website.local www.test-website.local:127.0.0.1"
 #    links:
 #      - memcached
     external_links:

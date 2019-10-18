@@ -8,10 +8,10 @@ services:
     sysctls:
       - net.ipv4.ip_unprivileged_port_start=0
     labels:
-      - traefik.http.frontend.rule=Host:juliyaz-m232.local,www.juliyaz-m232.local
-      - traefik.https.frontend.rule=Host:juliyaz-m232.local,www.juliyaz-m232.local
+      - traefik.http.frontend.rule=Host:juliyaz-m232.local,www.juliyaz-m232.local,test-website.local,www.test-website.local
+      - traefik.https.frontend.rule=Host:juliyaz-m232.local,www.juliyaz-m232.local,test-website.local,www.test-website.local
       # develop with extension that allows setting livereload host and port - https://github.com/lokcito/livereload-extensions
-      - traefik.grunt.frontend.rule=Host:juliyaz-m232.local,www.juliyaz-m232.local
+      - traefik.grunt.frontend.rule=Host:juliyaz-m232.local,www.juliyaz-m232.local,test-website.local,www.test-website.local
       - traefik.grunt.frontend.entryPoints=grunt
       - traefik.grunt.protocol=http
       - traefik.grunt.port=35729
